@@ -1,0 +1,19 @@
+<?php
+
+$frutas = [];
+
+echo "Digite 5 frutas:\n";
+for ($i = 0; $i < 5; $i++) {
+    $fruta = readline("Fruta " . ($i+1) . ": ");
+    $frutas[] = $fruta;
+}
+
+
+sort($frutas);
+
+
+echo "\nFrutas em ordem alfabética:\n";
+foreach ($frutas as $f) {
+    echo "- " . $f . "\n";
+}
+?>

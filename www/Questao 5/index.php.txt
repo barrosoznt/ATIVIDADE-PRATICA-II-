@@ -1,0 +1,27 @@
+<?php
+
+function paraFahrenheit($grausC) {
+    return ($grausC * 9 / 5) + 32;
+}
+
+function paraCelsius($grausF) {
+    return ($grausF - 32) * 5 / 9;
+}
+
+
+$valor = (float)readline("Informe a temperatura: ");
+$unidade = strtoupper(readline("Informe a unidade original (C/F): "));
+
+switch ($unidade) {
+    case "C":
+        $resultado = paraFahrenheit($valor);
+        echo "{$valor}°C correspondem a " . number_format($resultado, 2) . "°F\n";
+        break;
+    case "F":
+        $resultado = paraCelsius($valor);
+        echo "{$valor}°F correspondem a " . number_format($resultado, 2) . "°C\n";
+        break;
+    default:
+        echo "Unidade inválida! Use 'C' para Celsius ou 'F' para Fahrenheit.\n";
+}
+?>

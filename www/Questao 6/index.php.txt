@@ -1,0 +1,39 @@
+<?php
+
+function areaQuadrado($lado) {
+    return $lado * $lado;
+}
+
+function areaRetangulo($base, $altura) {
+    return $base * $altura;
+}
+
+function areaCirculo($raio) {
+    return pi() * ($raio * $raio);
+}
+
+echo "Escolha a figura geométrica para calcular a área:\n";
+echo "1 - Quadrado\n";
+echo "2 - Retângulo\n";
+echo "3 - Círculo\n";
+
+$opcao = (int)readline("Digite a opção (1-3): ");
+
+switch ($opcao) {
+    case 1:
+        $lado = (float)readline("Digite o lado do quadrado: ");
+        echo "Área do quadrado: " . number_format(areaQuadrado($lado), 2) . "\n";
+        break;
+    case 2:
+        $base = (float)readline("Digite a base do retângulo: ");
+        $altura = (float)readline("Digite a altura do retângulo: ");
+        echo "Área do retângulo: " . number_format(areaRetangulo($base, $altura), 2) . "\n";
+        break;
+    case 3:
+        $raio = (float)readline("Digite o raio do círculo: ");
+        echo "Área do círculo: " . number_format(areaCirculo($raio), 2) . "\n";
+        break;
+    default:
+        echo "Opção inválida!\n";
+}
+?>

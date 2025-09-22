@@ -1,0 +1,46 @@
+<?php
+
+$numeros = [];
+
+echo "Digite 10 números:\n";
+for ($i = 0; $i < 10; $i++) {
+    $num = (int) readline("Número " . ($i+1) . ": ");
+    $numeros[] = $num;
+}
+
+
+$pares = [];
+$impares = [];
+
+foreach ($numeros as $n) {
+    if ($n % 2 == 0) {
+        $pares[] = $n;
+    } else {
+        $impares[] = $n;
+    }
+}
+
+
+echo "\nNúmeros Pares:\n";
+if (!empty($pares)) {
+    foreach ($pares as $p) {
+        echo $p . " ";
+    }
+} else {
+    echo "Nenhum número par encontrado.";
+}
+
+echo "\n";
+
+
+echo "\nNúmeros Ímpares:\n";
+if (!empty($impares)) {
+    foreach ($impares as $i) {
+        echo $i . " ";
+    }
+} else {
+    echo "Nenhum número ímpar encontrado.";
+}
+
+echo "\n";
+?>
